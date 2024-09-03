@@ -36,7 +36,7 @@ export default function MainProjects() {
         <CustomColumn width="70%" alignitems="flex-start" justifycontent="center" gap="0.5rem">
             <CustomColumn alignitems="flex-start" gap='0.5rem'>
                 <CustomFont color="white" font="2rem" fontweight="bold">
-                    대표 프로젝트
+                    대표 프로젝트(3개)
                 </CustomFont>
                 <CustomFont color="#444444" font="1.2rem" fontweight="bold">
                     스크롤하여 모두 보기

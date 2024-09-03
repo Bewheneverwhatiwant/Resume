@@ -13,7 +13,7 @@ export default function AllClubs() {
 
     return (
         <CustomColumn width='70%' alignitems="flex-start" justifycontent="center" gap='3rem'>
-            <CustomFont color='white' font="2rem" fontweight="bold">동아리 활동</CustomFont>
+            <CustomFont color='white' font="2rem" fontweight="bold">동아리 활동(5개)</CustomFont>
             <CustomBox width='100%' height='20vh' overflowx="auto" alignitems="center" justifycontent="center" backgroundcolor="transparent">
                 <CustomRow width='100%' alignitems="center" justifycontent="space-around">
                     {clubs.map((club, index) => (

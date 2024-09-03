@@ -11,6 +11,8 @@ import MainProfile from "./mainpage/mainprofile";
 import MainProjects from "./mainpage/mainprojects";
 import AllProjects from "./mainpage/allprojects";
 import AllClubs from "./mainpage/allclubs";
+import AllSkills from "./mainpage/allskills";
+import CoreSkills from "./mainpage/coreskills";
 
 const Container = styled.div`
 display: flex;
@@ -51,6 +53,7 @@ export default function Home() {
           <MainProjects />
           <AllClubs />
           <AllProjects />
+          <CoreSkills />
         </CustomColumn>
       </Container>
     </>

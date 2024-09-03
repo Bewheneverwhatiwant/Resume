@@ -12,7 +12,7 @@ export default function AllProjects() {
         <CustomColumn width='70%' alignitems="flex-start" justifycontent="center" gap='2.5rem'>
             <CustomColumn alignitems="flex-start" gap='0.5rem'>
                 <CustomFont color="white" font="2rem" fontweight="bold">
-                    모든 활동
+                    모든 활동(24개)
                 </CustomFont>
                 <CustomFont color="#444444" font="1.2rem" fontweight="bold">
                     스크롤하여 모두 보기
