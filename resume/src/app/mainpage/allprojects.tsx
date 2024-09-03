@@ -9,9 +9,16 @@ import activities from "@/app/data/activities";
 
 export default function AllProjects() {
     return (
-        <CustomColumn width='70%' alignitems="flex-start" justifycontent="center" gap='2rem'>
-            <CustomFont color='white' font="2rem" fontweight="bold">모든 활동</CustomFont>
-            <CustomBox width='100%' height='30vh' overflowy="auto" alignitems="flex-start" justifycontent="flex-start" gap='2rem'>
+        <CustomColumn width='70%' alignitems="flex-start" justifycontent="center" gap='2.5rem'>
+            <CustomColumn alignitems="flex-start" gap='0.5rem'>
+                <CustomFont color="white" font="2rem" fontweight="bold">
+                    모든 활동
+                </CustomFont>
+                <CustomFont color="#444444" font="1.2rem" fontweight="bold">
+                    스크롤하여 모두 보기
+                </CustomFont>
+            </CustomColumn>
+            <CustomBox width='100%' height='70vh' overflowy="auto" alignitems="flex-start" justifycontent="flex-start" gap='2rem'>
                 <CustomRow width='100%' alignitems="center" justifycontent="space-around">
                     <CustomRow style={{ flex: 1 }}>
                         <CustomFont color='white' font='1.2rem' fontweight='bold'>기관</CustomFont>

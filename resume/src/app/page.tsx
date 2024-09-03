@@ -10,6 +10,7 @@ import CustomBox from "@/components/CustomBox";
 import MainProfile from "./mainpage/mainprofile";
 import MainProjects from "./mainpage/mainprojects";
 import AllProjects from "./mainpage/allprojects";
+import AllClubs from "./mainpage/allclubs";
 
 const Container = styled.div`
 display: flex;
@@ -30,8 +31,7 @@ const MainBanner = styled(StyledImg)`
 `;
 
 const MainBannerCover = styled.div`
-background-color: black;
-opacity: 0.7;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
 border: none;
 width: 100%;
 height: 70vh;
@@ -47,8 +47,9 @@ export default function Home() {
       <MainBannerCover />
       <Container>
         <MainProfile />
-        <CustomColumn width='100%' gap='13rem'>
+        <CustomColumn width='100%' gap='10rem'>
           <MainProjects />
+          <AllClubs />
           <AllProjects />
         </CustomColumn>
       </Container>
