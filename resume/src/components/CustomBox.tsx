@@ -10,16 +10,16 @@ interface CustomBoxProps {
   alignitems?: string;
   justifycontent?: string;
   margin?: string;
+  margintop?: string;
   padding?: string;
+  paddingbottom?: string;
   backgroundcolor?: string;
   color?: string;
   border?: string;
   borderradius?: string;
   overflowy?: string;
   overflowx?: string;
-  scrollbarColor?: string;
-  scrollbarTrackColor?: string;
-  scrollbarBorderRadius?: string;
+  zindex?: string;
 }
 
 const CustomBox = styled.div<CustomBoxProps>`
@@ -31,7 +31,9 @@ const CustomBox = styled.div<CustomBoxProps>`
   align-items: ${(props) => props.alignitems || "center"};
   justify-content: ${(props) => props.justifycontent || "center"};
   margin: ${(props) => props.margin || "0"};
+  margin-top: ${(props) => props.margintop || '0'};
   padding: ${(props) => props.padding || "0"};
+  padding-bottom: ${(props) => props.paddingbottom || "0"};
   background: ${(props) => props.backgroundcolor || "#1E1E1E"};
   color: ${(props) => props.color || "black"};
   padding: 0.75rem 1.5rem;
@@ -39,25 +41,24 @@ const CustomBox = styled.div<CustomBoxProps>`
   border-radius: ${(props) => props.borderradius || "0.5rem"};
   overflow-x: ${(props) => props.overflowx || "auto"};
   overflow-y: ${(props) => props.overflowy || "auto"};
+  z-index: ${(props) => props.zindex || '3'};
 
-  /* 세로 스크롤바 스타일링 */
-  ::-webkit-scrollbar:vertical {
-    width: 12px; /* 세로 스크롤바 너비 */
+
+  /* 스크롤바 스타일 */
+  &::-webkit-scrollbar {
+    width: 10px;
   }
 
-  /* 가로 스크롤바 스타일링 */
-  ::-webkit-scrollbar:horizontal {
-    height: 12px; /* 가로 스크롤바 높이 */
+  &::-webkit-scrollbar-track {
+    background: black;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background-color: ${(props) => props.scrollbarColor || "#888"};
-    border-radius: ${(props) => props.scrollbarBorderRadius || "10px"};
+  &::-webkit-scrollbar-thumb {
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    border: none;
   }
 
-  ::-webkit-scrollbar-track {
-    background: ${(props) => props.scrollbarTrackColor || "#f1f1f1"};
-  }
 `;
 
 export default CustomBox;

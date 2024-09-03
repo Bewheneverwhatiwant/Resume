@@ -32,12 +32,12 @@ const CustomButton = styled.button<CustomButtonProps>`
   border: ${(props) => props.border || "none"};
   border-radius: ${(props) => props.borderradius || "0.5rem"};
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.1s ease-in-out;
 
   /* Hover 스타일링 */
   &:hover {
     background: ${(props) => props.hoverBackgroundColor || "red"};
-    opacity: ${(props) => props.hoverOpacity || "0.8"};
+    opacity: 0.7;
   }
 `;
 
