@@ -1,10 +1,17 @@
 "use client";
+import { useState } from "react";
 import styled from "styled-components";
 import CustomBox from "@/components/CustomBox";
 import CustomColumn from "@/components/CustomColumn";
 import CustomFont from "@/components/CustomFont";
 import CustomRow from "@/components/CustomRow";
 import StyledImg from "@/components/StyledImg";
+import CustomModal from "@/components/CustomModal";
+import CustomButton from "@/components/CustomButton";
+
+import Project1Content from "./allmainprojects/Project1Content";
+import Project2Content from "./allmainprojects/Project2Content";
+import Project3Content from "./allmainprojects/Project3Content";
 
 const MainProjectImgWrapper = styled.div`
   display: flex;
@@ -32,16 +39,47 @@ const HoverText = styled(CustomFont)`
 `;
 
 export default function MainProjects() {
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+
+    function navigateTo(url: string) {
+        window.location.href = url;
+    }
+
+    const handleOpenModal = (content: React.ReactNode) => {
+        setModalContent(content);
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setModalContent(null);
+    };
+
     return (
         <CustomColumn width="70%" alignitems="flex-start" justifycontent="center" gap="0.5rem">
-            <CustomColumn alignitems="flex-start" gap='0.5rem'>
-                <CustomFont color="white" font="2rem" fontweight="bold">
-                    대표 프로젝트(3개)
-                </CustomFont>
-                <CustomFont color="#444444" font="1.2rem" fontweight="bold">
-                    스크롤하여 모두 보기
-                </CustomFont>
-            </CustomColumn>
+            <CustomRow width="100%" justifycontent="space-between">
+                <CustomColumn alignitems="flex-start" gap='0.5rem'>
+                    <CustomFont color="white" font="2rem" fontweight="bold">
+                        대표 프로젝트(3개)
+                    </CustomFont>
+                    <CustomFont color="#444444" font="1.2rem" fontweight="bold">
+                        스크롤하여 모두 보기
+                    </CustomFont>
+                </CustomColumn>
+                <CustomButton
+                    width="15%"
+                    alignitems="center"
+                    justifycontent="center"
+                    backgroundcolor="red"
+                    borderradius="0.5rem"
+                    onClick={() => navigateTo("https://drive.google.com/file/d/1DU1Rsz93eQs9C03iLsE5iYi7LuK5yUDb/view?usp=drivesdk")}
+                >
+                    <CustomFont color="white" font="1rem" fontweight="bold">
+                        Certificate
+                    </CustomFont>
+                </CustomButton>
+            </CustomRow>
             <CustomBox
                 flexdirection="row"
                 width="100%"
@@ -57,7 +95,7 @@ export default function MainProjects() {
                     <CustomFont color="#444444" font="10rem" fontweight="bold">
                         1
                     </CustomFont>
-                    <MainProjectImgWrapper>
+                    <MainProjectImgWrapper onClick={() => handleOpenModal(<Project1Content />)}>
                         <HoverText className="hoverText" color="red" font="1.3rem" fontweight="bold">
                             내 문서를 부탁해(대상)
                         </HoverText>
@@ -69,7 +107,7 @@ export default function MainProjects() {
                     <CustomFont color="#444444" font="10rem" fontweight="bold">
                         2
                     </CustomFont>
-                    <MainProjectImgWrapper>
+                    <MainProjectImgWrapper onClick={() => handleOpenModal(<Project2Content />)}>
                         <HoverText className="hoverText" color="red" font="1.3rem" fontweight="bold">
                             Battle for us(우수상)
                         </HoverText>
@@ -81,7 +119,7 @@ export default function MainProjects() {
                     <CustomFont color="#444444" font="10rem" fontweight="bold">
                         3
                     </CustomFont>
-                    <MainProjectImgWrapper>
+                    <MainProjectImgWrapper onClick={() => handleOpenModal(<Project3Content />)}>
                         <CustomColumn gap='0.5rem'>
                             <HoverText className="hoverText" color="red" font="1.3rem" fontweight="bold">
                                 항해
@@ -94,6 +132,10 @@ export default function MainProjects() {
                     </MainProjectImgWrapper>
                 </CustomRow>
             </CustomBox>
+
+            <CustomModal width='50%' isOpen={isModalOpen} onClose={handleCloseModal}>
+                {modalContent}
+            </CustomModal>
         </CustomColumn>
     );
 }

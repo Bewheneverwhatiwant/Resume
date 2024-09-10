@@ -7,6 +7,7 @@ import CustomFont from "@/components/CustomFont";
 import CustomRow from "@/components/CustomRow";
 import StyledImg from "@/components/StyledImg";
 import CustomBox from "@/components/CustomBox";
+import CustomModal from "@/components/CustomModal";
 import { BsPersonFill, BsGeoAltFill, BsAt, BsBank2, BsBook } from "react-icons/bs";
 import styled from "styled-components";
 
@@ -190,17 +191,7 @@ export default function MainProfile() {
                             </CustomColumn>
 
                             <CustomRow width="100%" alignitems="center" justifycontent="flex-start">
-                                <CustomButton
-                                    width="20%"
-                                    alignitems="center"
-                                    justifycontent="center"
-                                    backgroundcolor="red"
-                                    borderradius="0.5rem"
-                                >
-                                    <CustomFont color="white" font="1rem" fontweight="bold">
-                                        LinkedIn
-                                    </CustomFont>
-                                </CustomButton>
+
                                 <CustomButton
                                     width="20%"
                                     alignitems="center"
@@ -219,9 +210,22 @@ export default function MainProfile() {
                                     justifycontent="center"
                                     backgroundcolor="red"
                                     borderradius="0.5rem"
+                                    onClick={() => navigateTo("https://bustling-milk-9c3.notion.site/faca25cc19614bbe89ac1c2cb9a48414")}
                                 >
                                     <CustomFont color="white" font="1rem" fontweight="bold">
                                         Notion
+                                    </CustomFont>
+                                </CustomButton>
+                                <CustomButton
+                                    width="20%"
+                                    alignitems="center"
+                                    justifycontent="center"
+                                    backgroundcolor="red"
+                                    borderradius="0.5rem"
+                                    onClick={() => navigateTo("https://drive.google.com/file/d/1DkxKTX97dtQj3ir7p5XIo3pxLfLef9tV/view?usp=drivesdk")}
+                                >
+                                    <CustomFont color="white" font="1rem" fontweight="bold">
+                                        PDF
                                     </CustomFont>
                                 </CustomButton>
                             </CustomRow>
@@ -234,14 +238,14 @@ export default function MainProfile() {
                 <ModalImage src={"profileImg.jpg"} isOpen={isModalOpen} />
             </ModalOverlay>
 
-            <ModalOverlay isOpen={isExModalOpen} onClick={handleModalClose}>
-                <Modal isOpen={isModalOpen}>
-                    <CustomFont color='black' font='1.2rem'>대학교 1학년이던 2021년 겨울, 동계 기숙사 룸메이트가 컴퓨터공학부 언니였습니다.</CustomFont>
-                    <CustomFont color='black' font='1.2rem'>언니는 종종 알고리즘 과제의 풀이 방법을 설명해주었는데,</CustomFont>
-                    <CustomFont color='black' font='1.2rem'>풀이과정이 흥미롭고 제 적성에 맞는 분야라는 생각이 들어서</CustomFont>
-                    <CustomFont color='black' font='1.2rem'>대학교 2학년 2학기부터 컴퓨터공학을 이중전공하기 시작했습니다.</CustomFont>
-                </Modal>
-            </ModalOverlay>
+            <CustomModal width='50%' isOpen={isExModalOpen} onClose={handleModalClose}>
+                <CustomColumn width='100%' alignitems="flex-start" justifycontent="center" gap='0.5rem'>
+                    <CustomFont color='black' font='1rem'>대학교 1학년이던 2021년 겨울, 동계 기숙사 룸메이트가 컴퓨터공학부 언니였습니다.</CustomFont>
+                    <CustomFont color='black' font='1rem'>언니는 종종 알고리즘 과제의 풀이 방법을 설명해주었는데,</CustomFont>
+                    <CustomFont color='black' font='1rem'>풀이과정이 흥미롭고 제 적성에 맞는 분야라는 생각이 들어서</CustomFont>
+                    <CustomFont color='black' font='1rem'>대학교 2학년 2학기부터 컴퓨터공학을 이중전공하기 시작했습니다.</CustomFont>
+                </CustomColumn>
+            </CustomModal>
         </>
     );
 }
