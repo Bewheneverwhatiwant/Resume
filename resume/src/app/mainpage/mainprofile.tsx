@@ -39,22 +39,6 @@ const ModalImage = styled.img<ModalOverlayProps>`
   transform: ${(props) => (props.isOpen ? "scale(1)" : "scale(0.8)")};
 `;
 
-const Modal = styled.div<ModalOverlayProps>`
-background-color: white;
-width: 50%;
-height: 30%;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: center;
-gap: 1rem;
-padding: 1rem;
-
-border-radius: 0.5rem;
-transition: transform 0.3s ease-in-out;
-transform: ${(props) => (props.isOpen ? "scale(1)" : "scale(0.8)")};
-`;
-
 const ProfileImg = styled(StyledImg)`
 width: 15rem;
 border-radius: 0.5rem;
