@@ -194,7 +194,7 @@ export default function MainProfile() {
                                     justifycontent="center"
                                     backgroundcolor="red"
                                     borderradius="0.5rem"
-                                    onClick={() => navigateTo("https://bustling-milk-9c3.notion.site/faca25cc19614bbe89ac1c2cb9a48414")}
+                                    onClick={() => navigateTo("https://bustling-milk-9c3.notion.site/7b021eede0b24c42b5efcf33b2d073d0")}
                                 >
                                     <CustomFont color="white" font="1rem" fontweight="bold">
                                         Notion

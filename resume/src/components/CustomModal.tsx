@@ -15,6 +15,7 @@ interface CustomModalProps {
     padding?: string;
     borderRadius?: string;
     backgroundColor?: string;
+    overflowy?: string;
 }
 
 interface ModalOverlayProps {
@@ -31,6 +32,7 @@ interface ModalContainerProps {
     padding: string;
     borderRadius: string;
     backgroundColor: string;
+    overflowy?: string;
 }
 
 const ModalOverlay = styled.div<ModalOverlayProps>`
@@ -62,6 +64,22 @@ const ModalContainer = styled.div<ModalContainerProps>`
   border-radius: ${(props) => props.borderRadius};
   transition: transform 0.3s ease-in-out;
   transform: ${(props) => (props.isOpen ? "scale(1)" : "scale(0.8)")};
+  overflow-y: ${(props) => props.overflowy};
+
+  /* 스크롤바 스타일 */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #AFAFAF;
+    border-radius: 5px;
+    border: none;
+  }
 `;
 
 const CustomModal: React.FC<CustomModalProps> = ({
@@ -76,6 +94,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
     padding = "0.5rem",
     borderRadius = "0.5rem",
     backgroundColor = "white",
+    overflowy,
 }) => {
     return (
         <ModalOverlay isOpen={isOpen} onClick={onClose}>
@@ -89,6 +108,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
                 padding={padding}
                 borderRadius={borderRadius}
                 backgroundColor={backgroundColor}
+                overflowy={overflowy}
             >
                 {children}
             </ModalContainer>

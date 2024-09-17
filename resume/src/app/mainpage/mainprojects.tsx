@@ -73,7 +73,7 @@ export default function MainProjects() {
                     justifycontent="center"
                     backgroundcolor="red"
                     borderradius="0.5rem"
-                    onClick={() => navigateTo("https://drive.google.com/file/d/1DU1Rsz93eQs9C03iLsE5iYi7LuK5yUDb/view?usp=drivesdk")}
+                    onClick={() => navigateTo("https://drive.google.com/file/d/1H2XCXgCcXkvWH98YPGPV-5bu3veyKuMh/view?usp=drivesdk")}
                 >
                     <CustomFont color="white" font="1rem" fontweight="bold">
                         Certificate
@@ -133,7 +133,7 @@ export default function MainProjects() {
                 </CustomRow>
             </CustomBox>
 
-            <CustomModal width='50%' isOpen={isModalOpen} onClose={handleCloseModal}>
+            <CustomModal width='50%' height='80vh' backgroundColor="white" isOpen={isModalOpen} onClose={handleCloseModal} overflowy="scroll" padding="2rem">
                 {modalContent}
             </CustomModal>
         </CustomColumn>
