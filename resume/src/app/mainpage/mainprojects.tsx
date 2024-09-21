@@ -95,7 +95,8 @@ export default function MainProjects() {
                     <CustomFont color="#444444" font="10rem" fontweight="bold">
                         1
                     </CustomFont>
-                    <MainProjectImgWrapper onClick={() => handleOpenModal(<Project1Content />)}>
+                    {/* onClick={() => handleOpenModal(<Project1Content />)} */}
+                    <MainProjectImgWrapper>
                         <HoverText className="hoverText" color="red" font="1.3rem" fontweight="bold">
                             내 문서를 부탁해(대상)
                         </HoverText>
@@ -107,7 +108,8 @@ export default function MainProjects() {
                     <CustomFont color="#444444" font="10rem" fontweight="bold">
                         2
                     </CustomFont>
-                    <MainProjectImgWrapper onClick={() => handleOpenModal(<Project2Content />)}>
+                    {/* onClick={() => handleOpenModal(<Project2Content />)} */}
+                    <MainProjectImgWrapper>
                         <HoverText className="hoverText" color="red" font="1.3rem" fontweight="bold">
                             Battle for us(우수상)
                         </HoverText>
@@ -119,7 +121,8 @@ export default function MainProjects() {
                     <CustomFont color="#444444" font="10rem" fontweight="bold">
                         3
                     </CustomFont>
-                    <MainProjectImgWrapper onClick={() => handleOpenModal(<Project3Content />)}>
+                    {/* onClick={() => handleOpenModal(<Project3Content />)} */}
+                    <MainProjectImgWrapper>
                         <CustomColumn gap='0.5rem'>
                             <HoverText className="hoverText" color="red" font="1.3rem" fontweight="bold">
                                 항해
